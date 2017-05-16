@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Quick Analyse</string>
+    <string name="welcome_to_quick_analyse">Welcome to Quick Analyse!</string>
+    <string name="text">Text</string>
+    <string name="file">File</string>
+    <string name="demo">Demo</string>
 </resources>
