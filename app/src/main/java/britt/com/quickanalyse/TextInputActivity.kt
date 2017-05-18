@@ -1,9 +1,8 @@
 package britt.com.quickanalyse
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_text_input.*
 
 class TextInputActivity : AppCompatActivity() {
@@ -20,6 +19,11 @@ class TextInputActivity : AppCompatActivity() {
     var cChart = false
     var wChart = false
 
+    var characterMap: MutableMap<String, Int> = mutableMapOf()
+
+    val analyseCharacters = AnalyseCharacters()
+    val analyseWords = AnalyseWords()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_input)
@@ -32,10 +36,52 @@ class TextInputActivity : AppCompatActivity() {
             setCheckedBoxes()
             setUncheckedBoxes()
             setSpinnerChoices()
-            intent.putExtra("results", makeTextToSendToAnalysisResult())
+            var text = getUserText()
+            intent.putExtra("results", runMethods(text))
+            text = ""
             startActivity(intent)
         }
     }
+
+    fun runMethods(text: String): String {
+        var letterFrequency = "N/A"
+        var numberFrequency = "N/A"
+        var symbolFrequency = "N/A"
+        var countWords = "N/A"
+
+        if (countsLetters) {
+            letterFrequency = analyseCharacters.letterFrequency(text).toString()
+        }
+        if (countsNumbers) {
+            numberFrequency = analyseCharacters.numberFrequency(text).toString()
+        }
+        if (countsSymbols) {
+            symbolFrequency = analyseCharacters.symbolFrequency(text).toString()
+        }
+        if (countsCFreq) {
+            analyseCharacters.calculateFrequency(text, countsLetters, countsNumbers, countsSymbols, countsCFreq,
+                cChart, characterMap)
+        }
+        if (countsWords) {
+            countWords = analyseWords.countWords(text).toString()
+        }
+        if (countsLongestWord) {
+            analyseWords.findLongestWord(analyseWords.textToList(text))
+        }
+        if (countsWLengthFreq) {
+            analyseWords.countLengths(text, countsWLengthRFreq, wChart)
+        }
+
+        return "Total letters - $letterFrequency\n\nTotal numbers - $numberFrequency\n\n" +
+            "Total special characters - $symbolFrequency\n\nTotal words - $countWords"
+    }
+
+
+    fun getUserText(): String {
+        val text = analyser_user_input.editableText
+        return text.toString()
+    }
+
 
     fun makeTextToSendToAnalysisResult(): String {
         val output = "It's $countsLetters that letters are counted.\n" +
