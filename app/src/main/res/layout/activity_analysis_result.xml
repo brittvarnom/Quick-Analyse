@@ -30,7 +30,7 @@
         android:padding="24dp"
         android:gravity="center"
         android:textColor="@color/colorPrimaryDark"
-        android:background="@android:color/holo_green_light"
+        android:background="@color/colorAccent"
         android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
