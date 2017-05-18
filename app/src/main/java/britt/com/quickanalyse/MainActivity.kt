@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         onButtonClicked(analyser_demo_button, DemoInputActivity().javaClass)
     }
 
-    fun onButtonClicked(analyser_button: Button, destination: Class<Activity>) {
-        analyser_button.setOnClickListener {
+    fun onButtonClicked(button: Button, destination: Class<Activity>) {
+        button.setOnClickListener {
             Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this@MainActivity, destination))
         }
