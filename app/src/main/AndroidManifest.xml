@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".FileInputActivity">
         </activity>
+        <activity android:name=".AnalysisResultActivity">
+        </activity>
     </application>
 
 </manifest>
