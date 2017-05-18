@@ -26,25 +26,6 @@ class TextInputActivity : AppCompatActivity() {
         goToAnalysisResultOnClick()
     }
 
-    fun onAnalyseTextButtonClick() {
-        analyser_text_analyse_button.setOnClickListener {
-            setCheckedBoxes()
-            setUncheckedBoxes()
-            setSpinnerChoices()
-            Toast.makeText(this, "It's $countsLetters that letters are counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsNumbers that numbers are counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsSymbols that symbols are counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsCFreq that character frequency is counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsCRFreq that character r.frequency is counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $cChart that there's a character chart.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsWords that words are counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsLongestWord that the longest word is found.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsWLengthFreq that word frequency is counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $countsWLengthRFreq that word r.frequency is counted.", Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, "It's $wChart that there's a word chart.", Toast.LENGTH_SHORT).show()
-        }
-    }
-
     fun goToAnalysisResultOnClick() {
         val intent = Intent(this@TextInputActivity, AnalysisResultActivity().javaClass)
         analyser_text_analyse_button.setOnClickListener {
