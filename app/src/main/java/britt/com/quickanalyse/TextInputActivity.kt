@@ -1,5 +1,6 @@
 package britt.com.quickanalyse
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -22,7 +23,7 @@ class TextInputActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_input)
-        onAnalyseTextButtonClick()
+        goToAnalysisResultOnClick()
     }
 
     fun onAnalyseTextButtonClick() {
@@ -42,6 +43,32 @@ class TextInputActivity : AppCompatActivity() {
             Toast.makeText(this, "It's $countsWLengthRFreq that word r.frequency is counted.", Toast.LENGTH_SHORT).show()
             Toast.makeText(this, "It's $wChart that there's a word chart.", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun goToAnalysisResultOnClick() {
+        val intent = Intent(this@TextInputActivity, AnalysisResultActivity().javaClass)
+        analyser_text_analyse_button.setOnClickListener {
+            setCheckedBoxes()
+            setUncheckedBoxes()
+            setSpinnerChoices()
+            intent.putExtra("results", makeTextToSendToAnalysisResult())
+            startActivity(intent)
+        }
+    }
+
+    fun makeTextToSendToAnalysisResult(): String {
+        val output = "It's $countsLetters that letters are counted.\n" +
+            "It's $countsNumbers that numbers are counted.\n" +
+            "It's $countsSymbols that symbols are counted.\n" +
+            "It's $countsCFreq that character frequency is counted.\n" +
+            "It's $countsCRFreq that character r.frequency is counted.\n" +
+            "It's $cChart that there's a character chart.\n" +
+            "It's $countsWords that words are counted.\n" +
+            "It's $countsLongestWord that the longest word is found.\n" +
+            "It's $countsWLengthFreq that word frequency is counted.\n" +
+            "It's $countsWLengthRFreq that word r.frequency is counted.\n" +
+            "It's $wChart that there's a word chart.\n"
+        return output
     }
 
     fun setCheckedBoxes() {

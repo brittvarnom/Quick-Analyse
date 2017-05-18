@@ -13,6 +13,7 @@
     <string name="count_words">Count words</string>
     <string name="find_longest_word">Find longest word</string>
     <string name="word_frequency">Word frequency</string>
+    <string name="results">Results:</string>
 
     <string-array name="analyser_freq_array">
         <item>No Frequency</item>

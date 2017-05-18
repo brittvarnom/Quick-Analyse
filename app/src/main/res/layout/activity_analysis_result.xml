@@ -4,13 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="britt.com.quickanalyse.AnalysisResultActivity">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/results"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/analyser_display_result"
+        android:layout_width="match_parent"
+        android:padding="24dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@android:color/holo_green_light"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Results: "/>
+        tools:text="It's false that letters are counted.
+
+It's false that numbers are counted.
+
+It's false that symbols are counted.
+
+It's false that character frequency is counted.
+
+It's false that character r.frequency is counted.
+
+It's false that there's a character chart.
+
+It's false that words are counted.
+
+It's false that the longest word is found.
+
+It's false that word frequency is counted.
+
+It's false that word r.frequency is counted.
+
+It's false that there's a word chart."/>
 
 </LinearLayout>
