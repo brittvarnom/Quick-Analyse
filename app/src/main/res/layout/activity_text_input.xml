@@ -15,20 +15,21 @@
         />
 
     <EditText
+        android:id="@+id/analyser_user_input"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:gravity="start"
-        android:textColorHint="@color/colorPrimary"
         android:hint="@string/enter_text_here"
         android:inputType="textMultiLine"
-        android:maxHeight="300dp"/>
+        android:maxHeight="300dp"
+        android:textColorHint="@color/colorPrimary"/>
 
     <LinearLayout
         android:id="@+id/character_word_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_gravity="bottom"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:orientation="horizontal"
         android:weightSum="2">
@@ -59,10 +60,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/count_symbols"/>
 
-            <CheckBox
-                android:id="@+id/analyser_chars_freq_check"
+            <Spinner
+                android:id="@+id/analyser_chars_freq_spin"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:entries="@array/analyser_freq_array"
                 android:text="@string/character_frequency"/>
         </LinearLayout>
 
@@ -87,10 +91,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/find_longest_word"/>
 
-            <CheckBox
-                android:id="@+id/analyser_words_freq_check"
+            <Spinner
+                android:id="@+id/analyser_words_freq_spin"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:entries="@array/analyser_freq_array"
+                android:layoutDirection="ltr"
                 android:text="@string/word_frequency"/>
         </LinearLayout>
 
@@ -103,13 +111,13 @@
         android:background="@color/colorPrimaryDark"/>
 
 
-        <Button
-            android:id="@+id/analyser_text_analyse_button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="20dp"
-            android:text="Analyse!"/>
+    <Button
+        android:id="@+id/analyser_text_analyse_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:text="Analyse!"/>
 
 </LinearLayout>

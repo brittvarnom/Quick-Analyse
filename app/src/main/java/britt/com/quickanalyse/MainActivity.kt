@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     fun onButtonClicked(button: Button, destination: Class<Activity>) {
         button.setOnClickListener {
-            Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this@MainActivity, destination))
         }
     }
