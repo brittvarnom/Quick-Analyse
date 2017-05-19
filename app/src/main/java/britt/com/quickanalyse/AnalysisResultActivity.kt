@@ -4,25 +4,13 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_analysis_result.*
+import kotlinx.android.synthetic.main.activity_frequency.*
 
 class AnalysisResultActivity : AppCompatActivity() {
-
-    var countsLetters = false
-    var countsNumbers = false
-    var countsSymbols = false
-    var countsWords = false
-    var countsLongestWord = false
-    var countsCFreq = false
-    var countsWLengthFreq = false
-    var countsCRFreq = false
-    var countsWLengthRFreq = false
-    var cChart = false
-    var wChart = false
 
     var characterMap: MutableMap<String, Int> = mutableMapOf()
 
     val analyseCharacters = AnalyseCharacters()
-    val analyseWords = AnalyseWords()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

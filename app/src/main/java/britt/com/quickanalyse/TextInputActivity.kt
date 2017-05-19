@@ -5,19 +5,19 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_text_input.*
 
-class TextInputActivity : AppCompatActivity() {
+var countsLetters = false
+var countsNumbers = false
+var countsSymbols = false
+var countsWords = false
+var countsLongestWord = false
+var countsCFreq = false
+var countsWLengthFreq = false
+var countsCRFreq = false
+var countsWLengthRFreq = false
+var cChart = false
+var wChart = false
 
-    var countsLetters = false
-    var countsNumbers = false
-    var countsSymbols = false
-    var countsWords = false
-    var countsLongestWord = false
-    var countsCFreq = false
-    var countsWLengthFreq = false
-    var countsCRFreq = false
-    var countsWLengthRFreq = false
-    var cChart = false
-    var wChart = false
+class TextInputActivity : AppCompatActivity() {
 
     var characterMap: MutableMap<String, Int> = mutableMapOf()
 

@@ -25,7 +25,7 @@
         android:background="@color/colorPrimaryDark"/>
 
     <TextView
-        android:id="@+id/analyser_display_result"
+        android:id="@+id/analyser_display_frequency_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
