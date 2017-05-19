@@ -2,6 +2,8 @@ package britt.com.quickanalyse
 
 class AnalyseCharacters {
 
+    var cMap: MutableMap<String, Int> = mutableMapOf()
+
     fun letterFrequency(text: String): Int {
         var upperCount = 0
         var lowerCount = 0
@@ -88,16 +90,24 @@ class AnalyseCharacters {
                 }
             }
         }
+
+        cMap = characterMap
         return characterMap
+    }
+
+    fun getMap(): MutableMap<String, Int> {
+        return cMap
     }
 
     fun calculateFrequency(text: String, countsLetters: Boolean, countsNumbers: Boolean,
                            countsSymbols: Boolean, countsCRFreq: Boolean, cChart: Boolean,
-                           characterMap: MutableMap<String, Int>) {
+                           characterMap: MutableMap<String, Int>): String {
         characterFrequency(text, countsLetters, countsNumbers, countsSymbols, characterMap)
         val iterator = characterMap.keys.iterator()
         var relFreq = 0.0
         val total: Double = getTotal(characterMap)
+
+        var sb = StringBuilder()
 
         if (countsCRFreq) {
             println("Note - Relative frequency is only an approximation and may total up to be just" +
@@ -112,23 +122,23 @@ class AnalyseCharacters {
             if (countsCRFreq and cChart) {
 
                 if (relFreq >= 10 && relFreq.toString().length >= 5) {
-                    print("$key=$value | $relFreq% | ")
-                    makeBarChart(relFreq)
+                    sb.append("$key=$value | $relFreq% | ${makeBarChart(relFreq)}\n")
                 } else if (relFreq.toString().length <= 3) {
-                    print("$key=$value | $relFreq%   | ")
+                    sb.append("$key=$value | $relFreq%   | ${makeBarChart(relFreq)}\n")
                     makeBarChart(relFreq)
                 } else {
-                    print("$key=$value | $relFreq%  | ")
+                    sb.append("$key=$value | $relFreq%  | ${makeBarChart(relFreq)}\n")
                     makeBarChart(relFreq)
                 }
             } else if (countsCRFreq) {
-                println("$key=$value | $relFreq%")
+                sb.append("$key=$value | $relFreq%\n")
             } else {
-                println("$key=$value")
+                sb.append("$key=$value\n")
             }
 
         }
         characterMap.clear()
+        return sb.toString()
 
     }
 
@@ -143,12 +153,13 @@ class AnalyseCharacters {
         return total
     }
 
-    fun makeBarChart(relFreq: Double) {
+    fun makeBarChart(relFreq: Double): String {
         val bar = "X"
+        val barSb = StringBuilder()
         val repeats = (relFreq + 0.5).toInt()
         repeat(repeats) {
-            print(bar)
+            barSb.append(bar)
         }
-        println()
+        return barSb.toString()
     }
 }

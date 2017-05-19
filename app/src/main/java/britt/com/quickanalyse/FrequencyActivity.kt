@@ -10,18 +10,11 @@ class FrequencyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_frequency)
         val type = ""
-        setFrequencyDisplayed(type)
+        val charFrequency = intent.getStringExtra("char freq")
+        setFrequencyDisplayed(charFrequency)
     }
 
     fun setFrequencyDisplayed(type: String) {
-
-
-        if (type == "char") {
-            analyser_display_result.text = "charFrequency"
-        } else if (type == "word") {
-            analyser_display_result.text = "wordFrequency"
-        } else {
-            analyser_display_result.text = "N/A"
-        }
+            analyser_display_result.text = type
     }
 }

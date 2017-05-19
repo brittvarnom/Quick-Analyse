@@ -32,15 +32,12 @@ class TextInputActivity : AppCompatActivity() {
 
     fun goToAnalysisResultOnClick() {
         val intent = Intent(this@TextInputActivity, AnalysisResultActivity().javaClass)
-
-
         analyser_text_analyse_button.setOnClickListener {
             setCheckedBoxes()
             setUncheckedBoxes()
             setSpinnerChoices()
             var text = getUserText()
             intent.putExtra("results", runMethods(text))
-            val characterList = characterMap.toList().toTypedArray()
             text = ""
             startActivity(intent)
         }
@@ -61,12 +58,6 @@ class TextInputActivity : AppCompatActivity() {
         if (countsSymbols) {
             symbolFrequency = analyseCharacters.symbolFrequency(text).toString()
         }
-        if (countsCFreq) {
-            analyseCharacters.calculateFrequency(text, countsLetters, countsNumbers, countsSymbols, countsCFreq,
-                cChart, characterMap)
-            characterMap = analyseCharacters.characterFrequency(text, countsLetters, countsNumbers,
-                countsSymbols, characterMap)
-        }
         if (countsWords) {
             countWords = analyseWords.countWords(text).toString()
         }
@@ -79,6 +70,15 @@ class TextInputActivity : AppCompatActivity() {
 
         return "Total letters - $letterFrequency\n\nTotal numbers - $numberFrequency\n\n" +
             "Total special characters - $symbolFrequency\n\nTotal words - $countWords"
+    }
+
+    fun runFrequencyMethods(text: String): String {
+        var characterFrequency = "N/A"
+        if (countsCFreq) {
+            characterFrequency = analyseCharacters.calculateFrequency(text, countsLetters, countsNumbers,
+                countsSymbols, countsCRFreq, cChart, characterMap)
+        }
+        return characterFrequency
     }
 
 

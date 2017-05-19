@@ -69,7 +69,7 @@ It's false that there's a word chart."/>
             android:text="@string/view_character_frequency"/>
 
         <Button
-            android:id="@+id/analyser_wordss_frequency_button"
+            android:id="@+id/analyser_words_frequency_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
