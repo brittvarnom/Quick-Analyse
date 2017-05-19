@@ -17,7 +17,7 @@
     <EditText
         android:id="@+id/analyser_user_input"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="150dp"
         android:gravity="start"
         android:hint="@string/enter_text_here"
         android:inputType="textMultiLine"

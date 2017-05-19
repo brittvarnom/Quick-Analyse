@@ -63,7 +63,7 @@ class AnalyseCharacters {
     }
 
     fun characterFrequency(text: String, countsLetters: Boolean, countsNumbers: Boolean,
-                           countsSymbols: Boolean, characterMap: MutableMap<String, Int>) {
+                           countsSymbols: Boolean, characterMap: MutableMap<String, Int>): MutableMap<String, Int> {
         for (i in 0..text.length - 1) {
             var isSymbol = true
             if (countsLetters) {
@@ -88,6 +88,7 @@ class AnalyseCharacters {
                 }
             }
         }
+        return characterMap
     }
 
     fun calculateFrequency(text: String, countsLetters: Boolean, countsNumbers: Boolean,

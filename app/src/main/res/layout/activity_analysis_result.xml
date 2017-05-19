@@ -30,6 +30,7 @@
         android:padding="24dp"
         android:gravity="center"
         android:textColor="@color/colorPrimaryDark"
+        android:scrollbars="vertical"
         android:background="@color/colorAccent"
         android:textStyle="bold"
         android:layout_height="wrap_content"
@@ -55,5 +56,24 @@ It's false that word frequency is counted.
 It's false that word r.frequency is counted.
 
 It's false that there's a word chart."/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/analyser_chars_frequency_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/view_character_frequency"/>
+
+        <Button
+            android:id="@+id/analyser_wordss_frequency_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/view_word_frequency"/>
+    </LinearLayout>
 
 </LinearLayout>

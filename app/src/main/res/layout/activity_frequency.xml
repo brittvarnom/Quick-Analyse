@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="britt.com.quickanalyse.FrequencyActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/results"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/analyser_display_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:scrollbars="vertical"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:padding="24dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        tools:text="T=1 | 1.32%
+h=4 | 5.26%
+e=8 | 10.53%
+1=1 | 1.32%
+0=1 | 1.32%
+q=1 | 1.32%
+u=3 | 3.95%
+i=2 | 2.63%
+c=2 | 2.63%
+k=1 | 1.32%
+b=1 | 1.32%
+r=3 | 3.95%
+o=6 | 7.89%
+w=1 | 1.32%
+n=2 | 2.63%
+f=1 | 1.32%
+x=1 | 1.32%
+s=4 | 5.26%
+j=1 | 1.32%
+m=2 | 2.63%
+p=1 | 1.32%
+d=4 | 5.26%
+v=2 | 2.63%
+t=4 | 5.26%
+l=2 | 2.63%
+a=3 | 3.95%
+z=1 | 1.32%
+y=4 | 5.26%
+g=1 | 1.32%
+.=1 | 1.32%
+W=1 | 1.32%
+?=1 | 1.32%
+I=1 | 1.32%
+'=1 | 1.32%
+-=1 | 1.32%
+5=1 | 1.32%
+!=1 | 1.32%"/>
+
+</LinearLayout>

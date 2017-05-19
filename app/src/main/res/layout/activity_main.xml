@@ -26,6 +26,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/analyser_text_button"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -53,19 +54,5 @@
             android:text="@string/file"
             android:textSize="16sp"/>
 
-        <Button
-            android:id="@+id/analyser_demo_button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:padding="20dp"
-            android:text="@string/demo"
-            android:textSize="16sp"/>
     </LinearLayout>
-
-
 </LinearLayout>

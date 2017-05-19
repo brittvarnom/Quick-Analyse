@@ -16,6 +16,8 @@
     <string name="results">Results:</string>
     <string name="demo_string">The 10 quick brown foxes jumped over the lazy dogs. Why? It\'s a mystery - 5 could have done it!</string>
     <string name="analyse">Analyse!</string>
+    <string name="view_character_frequency">View character frequency</string>
+    <string name="view_word_frequency">View word frequency</string>
 
     <string-array name="analyser_freq_array">
         <item>No Frequency</item>

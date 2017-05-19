@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".AnalysisResultActivity">
         </activity>
+        <activity android:name=".FrequencyActivity">
+        </activity>
     </application>
 
 </manifest>
